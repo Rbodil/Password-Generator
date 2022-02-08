@@ -1,15 +1,21 @@
 // Assignment code here
-var desiredLength = window.prompt('How long do you want your password? Must be 8 - 128 characters.');
-var includeB = window.confirm('Include uppercase?');
-var includeNum = window.confirm('Include Numbers?');
-var includeSpec = window.confirm('Include special characters?');
-
 const alphaA = arrayValues(97, 122)
 const alphaB = arrayValues(65,90)
 const numeric = arrayValues(48, 57)
 const specials = arrayValues(32, 47).concat(arrayValues(58,64)).concat(arrayValues(91,96)).concat(arrayValues(123,126))
 
+
+
 function generatePassword(alphaA, alphaB, numeric, specials) {
+  var desiredLength = window.prompt('How long do you want your password? Must be 8 - 128 characters.');
+    if(desiredLength<8 || desiredLength>128){
+    window.alert("Enter a number between 8 and 128"); 
+    generatePassword();
+    }
+  var includeB = window.confirm('Include uppercase?');
+  var includeNum = window.confirm('Include Numbers?');
+  var includeSpec = window.confirm('Include special characters?');
+
   String.fromCharCode
   let charCodes = alphaA;
   if (includeB === true) {
@@ -27,7 +33,8 @@ function generatePassword(alphaA, alphaB, numeric, specials) {
   }
   return passChar.join('')
 };
-  
+
+
 function arrayValues(low, high) {
   const array=[]
   for (let i=low; i < high; i++){
@@ -35,13 +42,13 @@ function arrayValues(low, high) {
   }
   return array
 };
-  
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function writePassword() {  
   var password = generatePassword(alphaA, alphaB, numeric, specials);
   var passwordText = document.querySelector("#password");
 
@@ -53,7 +60,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-writePassword();
+
 
 
 
