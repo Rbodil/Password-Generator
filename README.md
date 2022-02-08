@@ -9,4 +9,5 @@ https://rbodil.github.io/Password-Generator/
 
 </br>
 
-![pg_demo](/Password-Generator/Assets/DeployedScreenshot.png)
+![image](https://user-images.githubusercontent.com/97258453/153095837-27186c7e-bc1b-441a-b714-f3222af79dbc.png)
+
